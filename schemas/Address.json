@@ -1,0 +1,29 @@
+{
+  "type": "object",
+  "properties": {
+    "addressLine2": {
+      "type": "string"
+    },
+    "addressState": {
+      "type": "string"
+    },
+    "addressCity": {
+      "type": "string"
+    },
+    "postalCode": {
+      "type": "string"
+    },
+    "addressCountry": {
+      "type": "string"
+    },
+    "typeId": {
+      "type": "string"
+    },
+    "id": {
+      "type": "string"
+    },
+    "addressLine1": {
+      "type": "string"
+    }
+  }
+}

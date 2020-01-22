@@ -1,0 +1,17 @@
+{
+  "type": "object",
+  "properties": {
+    "id": {
+      "type": "string"
+    },
+    "addressId": {
+      "type": "string"
+    },
+    "userId": {
+      "type": "string"
+    },
+    "primarySw": {
+      "type": "string"
+    }
+  }
+}

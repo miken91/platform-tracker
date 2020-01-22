@@ -1,0 +1,81 @@
+{
+  "type": "object",
+  "properties": {
+    "description": {
+      "type": "string"
+    },
+    "createDate": {
+      "type": "object",
+      "properties": {
+        "timezoneOffset": {
+          "type": "integer"
+        },
+        "day": {
+          "type": "integer"
+        },
+        "hours": {
+          "type": "integer"
+        },
+        "minutes": {
+          "type": "integer"
+        },
+        "year": {
+          "type": "integer"
+        },
+        "time": {
+          "type": "integer"
+        },
+        "seconds": {
+          "type": "integer"
+        },
+        "date": {
+          "type": "integer"
+        },
+        "month": {
+          "type": "integer"
+        }
+      }
+    },
+    "name": {
+      "type": "string"
+    },
+    "updateDate": {
+      "type": "object",
+      "properties": {
+        "timezoneOffset": {
+          "type": "integer"
+        },
+        "day": {
+          "type": "integer"
+        },
+        "hours": {
+          "type": "integer"
+        },
+        "minutes": {
+          "type": "integer"
+        },
+        "year": {
+          "type": "integer"
+        },
+        "time": {
+          "type": "integer"
+        },
+        "seconds": {
+          "type": "integer"
+        },
+        "date": {
+          "type": "integer"
+        },
+        "month": {
+          "type": "integer"
+        }
+      }
+    },
+    "activeSw": {
+      "type": "string"
+    },
+    "id": {
+      "type": "string"
+    }
+  }
+}
