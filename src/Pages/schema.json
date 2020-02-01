@@ -1,0 +1,595 @@
+{
+  "schema": [
+  {
+    "path": "address-types",
+    "constraints": [],
+    "title": "AddressType",
+    "properties": {
+      "id": {
+        "type": "string"
+      },
+      "name": {
+        "type": "string"
+      },
+      "description": {
+        "type": "string"
+      },
+      "activeSw": {
+        "type": "boolean"
+      },
+      "createDate": {
+        "type": "string",
+        "format": "date-time"
+      },
+      "updateDate": {
+        "type": "string",
+        "format": "date-time"
+      }
+    },
+    "required": [
+      "id",
+      "createDate"
+    ],
+    "additionalProperties": false
+  },
+  {
+    "path": "addresses",
+    "constraints": [
+      {
+        "tablePath": "address-types,",
+        "pK": "type_id",
+        "fK": "id"
+      }
+    ],
+    "title": "Address",
+    "properties": {
+      "id": {
+        "type": "string"
+      },
+      "typeId": {
+        "type": "string"
+      },
+      "addressLine1": {
+        "type": "string"
+      },
+      "addressLine2": {
+        "type": "string"
+      },
+      "postalCode": {
+        "type": "string"
+      },
+      "addressState": {
+        "type": "string"
+      },
+      "addressCountry": {
+        "type": "string"
+      },
+      "addressCity": {
+        "type": "string"
+      }
+    },
+    "required": [
+      "id",
+      "typeId"
+    ],
+    "additionalProperties": false
+  },
+  {
+    "path": "asset-audiences",
+    "constraints": [],
+    "title": "AssetAudience",
+    "properties": {
+      "id": {
+        "type": "string"
+      },
+      "name": {
+        "type": "string"
+      },
+      "description": {
+        "type": "string"
+      },
+      "activeSw": {
+        "type": "boolean"
+      },
+      "createDate": {
+        "type": "string",
+        "format": "date-time"
+      },
+      "updateDate": {
+        "type": "string",
+        "format": "date-time"
+      }
+    },
+    "required": [
+      "id",
+      "createDate"
+    ],
+    "additionalProperties": false
+  },
+  {
+    "path": "asset-cats",
+    "constraints": [],
+    "title": "AssetCat",
+    "properties": {
+      "id": {
+        "type": "string"
+      },
+      "name": {
+        "type": "string"
+      },
+      "description": {
+        "type": "string"
+      },
+      "activeSw": {
+        "type": "boolean"
+      },
+      "createDate": {
+        "type": "string",
+        "format": "date-time"
+      },
+      "updateDate": {
+        "type": "string",
+        "format": "date-time"
+      },
+      "parentId": {
+        "type": "string"
+      }
+    },
+    "required": [
+      "id",
+      "createDate"
+    ],
+    "additionalProperties": false
+  },
+  {
+    "path": "asset-primary-user-types",
+    "constraints": [],
+    "title": "AssetPrimaryUserType",
+    "properties": {
+      "id": {
+        "type": "string"
+      },
+      "name": {
+        "type": "string"
+      },
+      "description": {
+        "type": "string"
+      },
+      "activeSw": {
+        "type": "boolean"
+      },
+      "createDate": {
+        "type": "string",
+        "format": "date-time"
+      },
+      "updateDate": {
+        "type": "string",
+        "format": "date-time"
+      }
+    },
+    "required": [
+      "id",
+      "createDate"
+    ],
+    "additionalProperties": false
+  },
+  {
+    "path": "asset-slas",
+    "constraints": [],
+    "title": "AssetSla",
+    "properties": {
+      "id": {
+        "type": "string"
+      },
+      "name": {
+        "type": "string"
+      },
+      "description": {
+        "type": "string"
+      },
+      "activeSw": {
+        "type": "boolean"
+      },
+      "createDate": {
+        "type": "string",
+        "format": "date-time"
+      },
+      "updateDate": {
+        "type": "string",
+        "format": "date-time"
+      }
+    },
+    "required": [
+      "id",
+      "createDate"
+    ],
+    "additionalProperties": false
+  },
+  {
+    "path": "asset-types",
+    "constraints": [],
+    "title": "AssetType",
+    "properties": {
+      "id": {
+        "type": "string"
+      },
+      "name": {
+        "type": "string"
+      },
+      "description": {
+        "type": "string"
+      },
+      "activeSw": {
+        "type": "boolean"
+      },
+      "createDate": {
+        "type": "string",
+        "format": "date-time"
+      },
+      "updateDate": {
+        "type": "string",
+        "format": "date-time"
+      }
+    },
+    "required": [
+      "id",
+      "createDate"
+    ],
+    "additionalProperties": false
+  },
+  {
+    "path": "assets",
+    "constraints": [
+      {
+        "tablePath": "asset-slas",
+        "pK": "id",
+        "fK": "sla_id"
+      },
+      {
+        "tablePath": "asset-audiences",
+        "pK": "audience_id",
+        "fK": "id"
+      },
+      {
+        "tablePath": "asset-primary-user-types",
+        "pK": "primary_user_type_id",
+        "fK": "id"
+      },
+      {
+        "tablePath": "asset-cat",
+        "pK": "cat_id",
+        "fK": "id"
+      },
+      {
+        "tablePath": "asset-type",
+        "pK": "type_id",
+        "fK": "id"
+      },
+      {
+        "tablePath": "users",
+        "pK": "owner_id",
+        "fK": "id"
+      }
+    ],
+    "title": "Asset",
+    "properties": {
+      "id": {
+        "type": "string"
+      },
+      "name": {
+        "type": "string"
+      },
+      "description": {
+        "type": "string"
+      },
+      "createDate": {
+        "type": "string",
+        "format": "date-time"
+      },
+      "udadatedDate": {
+        "type": "string",
+        "format": "date-time"
+      },
+      "ownerId": {
+        "type": "string"
+      },
+      "active": {
+        "type": "boolean"
+      },
+      "typeId": {
+        "type": "string"
+      },
+      "catId": {
+        "type": "string"
+      },
+      "audienceId": {
+        "type": "string"
+      },
+      "primaryUserTypeId": {
+        "type": "string"
+      },
+      "slaId": {
+        "type": "string"
+      },
+      "volumeMetrics": {
+        "type": "number"
+      },
+      "version": {
+        "type": "string"
+      },
+      "capacityMetircs": {
+        "type": "number"
+      }
+    },
+    "required": [
+      "id",
+      "name",
+      "createDate",
+      "active"
+    ],
+    "additionalProperties": false
+  },
+  {
+    "path": "entitlements",
+    "constraints": [],
+    "title": "Entitlement",
+    "properties": {
+      "id": {
+        "type": "string"
+      },
+      "name": {
+        "type": "string"
+      },
+      "description": {
+        "type": "number"
+      },
+      "activeSw": {
+        "type": "boolean"
+      },
+      "createDate": {
+        "type": "string",
+        "format": "date-time"
+      },
+      "updateDate": {
+        "type": "string",
+        "format": "date-time"
+      }
+    },
+    "required": [
+      "id",
+      "createDate"
+    ],
+    "additionalProperties": false
+  },
+  {
+    "path": "org-role-entitlements",
+    "constraints": [
+      {
+        "tablePath": "orgs",
+        "pK": "org_id",
+        "fK": "id"
+      },
+      {
+        "tablePath": "roles",
+        "pK": "role_id",
+        "fK": "id"
+      },
+      {
+        "tablePath": "entitlements",
+        "pK": "entitlement_id",
+        "fK": "id"
+      }
+    ],
+    "title": "OrgRoleEntitlement",
+    "properties": {
+      "id": {
+        "type": "string"
+      },
+      "roleId": {
+        "type": "string"
+      },
+      "entitlementId": {
+        "type": "string"
+      },
+      "orgId": {
+        "type": "string"
+      }
+    },
+    "required": [
+      "id"
+    ],
+    "additionalProperties": false
+  },
+  {
+    "path": "orgs",
+    "constraints": [],
+    "title": "Org",
+    "properties": {
+      "id": {
+        "type": "string"
+      },
+      "name": {
+        "type": "string"
+      },
+      "parentid": {
+        "type": "string"
+      },
+      "description": {
+        "type": "string"
+      },
+      "activeSw": {
+        "type": "boolean"
+      },
+      "createDate": {
+        "type": "string",
+        "format": "date-time"
+      },
+      "updateDate": {
+        "type": "string",
+        "format": "date-time"
+      },
+      "alternateId": {
+        "type": "string"
+      }
+    },
+    "required": [
+      "id",
+      "createDate"
+    ],
+    "additionalProperties": false
+  },
+  {
+    "path": "users",
+    "constraints": [
+      {
+        "tablePath": "orgs",
+        "pK": "org_id",
+        "fK": "id"
+      }
+    ],
+    "title": "User",
+    "properties": {
+      "id": {
+        "type": "string"
+      },
+      "email": {
+        "type": "string"
+      },
+      "password": {
+        "type": "string"
+      },
+      "userName": {
+        "type": "string"
+      },
+      "activeSw": {
+        "type": "boolean"
+      },
+      "createdDate": {
+        "type": "string",
+        "format": "date-time"
+      },
+      "updatedDate": {
+        "type": "string",
+        "format": "date-time"
+      },
+      "firstName": {
+        "type": "string"
+      },
+      "lastName": {
+        "type": "string"
+      },
+      "addressId": {
+        "type": "string"
+      },
+      "orgId": {
+        "type": "string"
+      }
+    },
+    "required": [
+      "id",
+      "password",
+      "userName",
+      "activeSw",
+      "createdDate"
+    ],
+    "additionalProperties": false
+  },
+  {
+    "path": "roles",
+    "constraints": [],
+    "title": "Role",
+    "properties": {
+      "id": {
+        "type": "string"
+      },
+      "name": {
+        "type": "string"
+      },
+      "description": {
+        "type": "number"
+      },
+      "activeSw": {
+        "type": "boolean"
+      },
+      "createDate": {
+        "type": "string",
+        "format": "date-time"
+      },
+      "updateDate": {
+        "type": "string",
+        "format": "date-time"
+      }
+    },
+    "required": [
+      "id",
+      "createDate"
+    ],
+    "additionalProperties": false
+  },
+  {
+    "path": "user_addresses",
+    "constraints": [
+      {
+        "tablePath": "addresses",
+        "pK": "address_id",
+        "fK": "id"
+      },
+      {
+        "tablePath": "users",
+        "pK": "user_id",
+        "fK": "id"
+      }
+    ],
+    "title": "UserAddress",
+    "properties": {
+      "id": {
+        "type": "string"
+      },
+      "addressId": {
+        "type": "string"
+      },
+      "userId": {
+        "type": "string"
+      },
+      "primarySw": {
+        "type": "boolean"
+      }
+    },
+    "required": [
+      "id"
+    ],
+    "additionalProperties": false
+  },
+  {
+    "path": "user_roles",
+    "constraints": [
+      {
+        "tablePath": "users",
+        "pK": "user_id",
+        "fK": "id"
+      },
+      {
+        "tablePath": "roles",
+        "pK": "role_id",
+        "fK": "id"
+      }
+    ],
+    "title": "UserRole",
+    "properties": {
+      "id": {
+        "type": "string"
+      },
+      "roleId": {
+        "type": "string"
+      },
+      "userId": {
+        "type": "string"
+      }
+    },
+    "required": [
+      "id"
+    ],
+    "additionalProperties": false
+  }
+  ]
+}

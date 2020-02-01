@@ -8,7 +8,7 @@ function AppBarComponent() {
         <AppBar position='static'>
             <Toolbar>
                 <Link to="/">Home</Link>
-                <Link to="/addAsset">Add Asset</Link>
+                <Link to="/addAsset">Database Maintenance</Link>
             </Toolbar>
         </AppBar>
 
