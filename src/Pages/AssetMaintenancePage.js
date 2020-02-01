@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Grid, Tabs, Tab, List, ListItem, ListItemText } from '@material-ui/core';
 import { makeStyles } from "@material-ui/core/styles";
-import AssetMaintenanceComponent from "../Components/AddAssetComponents/AssetMaintenanceComponent";
+import ModifyAssetComponent from "../Components/ModifyAssetComponents/ModifyAssetComponent";
 import data from "./schema";
 
 const useStyles = makeStyles(theme => ({
@@ -36,7 +36,7 @@ function AssetMaintenancePage() {
                     </List>
                 </Grid>
                 <Grid item lg={9}>
-                    <AssetMaintenanceComponent schema={schema[selectedIndex]}/>
+                    <ModifyAssetComponent schema={schema[selectedIndex]}/>
                 </Grid>
             </Grid>
         </React.Fragment>
