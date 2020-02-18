@@ -1,8 +1,9 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useContext } from 'react';
 import { Grid, Tabs, Tab, List, ListItem, ListItemText } from '@material-ui/core';
 import { makeStyles } from "@material-ui/core/styles";
 import ModifyAssetComponent from "../Components/ModifyAssetComponents/ModifyAssetComponent";
 import data from "./schema";
+import ApplicationContext from '../ApplicationContext';
 
 const useStyles = makeStyles(theme => ({
     listGridItem: {
@@ -11,6 +12,8 @@ const useStyles = makeStyles(theme => ({
     }
 }));
 function AssetMaintenancePage() {
+    const context = useContext(ApplicationContext);
+    console.log(context);
     const classes = useStyles();
     const [selectedIndex, setSelectedIndex] = useState(0);
     const handleListItemClick = (event, i) => {
