@@ -527,7 +527,7 @@
     "additionalProperties": false
   },
   {
-    "path": "user_addresses",
+    "path": "user-addresses",
     "constraints": [
       {
         "tablePath": "addresses",
@@ -561,7 +561,7 @@
     "additionalProperties": false
   },
   {
-    "path": "user_roles",
+    "path": "user-roles",
     "constraints": [
       {
         "tablePath": "users",
