@@ -35,7 +35,7 @@ function ModifyAssetComponent(props) {
                     data.push(newRow);
                 });
             }
-            setState({columns: columns, data: Object.assign([], data)});
+            setState({columns: columns, data: data});
         })
     }, [props]);
 
